@@ -1,0 +1,152 @@
+/*==================================================
+    KHYANRICK PORTFOLIO
+    ABOUT.CSS
+====================================================*/
+
+
+/*==================================================
+    ABOUT HERO
+====================================================*/
+
+.about-hero{
+
+    min-height:35vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+
+/*==================================================
+    ABOUT SECTION
+====================================================*/
+
+.about-section{
+
+    padding-top:2rem;
+
+}
+
+.about-content{
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+.about-text{
+
+    background:var(--clr-surface);
+
+    border:1px solid var(--clr-border);
+
+    border-radius:var(--radius-lg);
+
+    padding:3rem;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.20);
+
+}
+
+.about-text h2{
+
+    color:var(--clr-primary-light);
+
+    margin-bottom:2rem;
+
+}
+
+.about-text p{
+
+    margin-bottom:1.5rem;
+
+    font-size:1.05rem;
+
+    line-height:1.9;
+
+}
+
+.about-text p:last-child{
+
+    margin-bottom:0;
+
+}
+
+
+
+/*==================================================
+    EDUCATION
+====================================================*/
+
+.education-section{
+
+    background:var(--clr-surface);
+
+    border-top:1px solid var(--clr-border);
+
+    border-bottom:1px solid var(--clr-border);
+
+}
+
+
+
+/*==================================================
+    TECHNICAL SKILLS
+====================================================*/
+
+.skills-section .skills-grid{
+
+    margin-top:3rem;
+
+}
+
+
+
+/*==================================================
+    INTERESTS
+====================================================*/
+
+.interests-grid{
+
+    margin-top:3rem;
+
+}
+
+.interest-card{
+
+    padding:2.5rem;
+
+}
+
+.interest-card h3{
+
+    margin-top:1.2rem;
+
+}
+
+
+
+/*==================================================
+    SECTION TRANSITIONS
+====================================================*/
+
+.about-section,
+.education-section,
+.skills-section,
+.interests-section{
+
+    animation:fadeUp .8s ease;
+
+}
+
+
+
+/*==================================================
+    END OF ABOUT.CSS
+====================================================*/

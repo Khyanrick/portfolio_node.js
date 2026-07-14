@@ -1,0 +1,527 @@
+/*==================================================
+    KHYANRICK PORTFOLIO
+    HOME.CSS
+    Part 1 / 2
+====================================================*/
+
+
+/*==================================================
+    HERO SECTION
+====================================================*/
+
+.hero{
+
+    min-height:calc(100vh - 75px);
+
+    display:grid;
+
+    grid-template-columns:1.2fr .8fr;
+
+    align-items:center;
+
+    gap:4rem;
+
+}
+
+
+
+/*==================================================
+    HERO CONTENT
+====================================================*/
+
+.hero-content{
+
+    max-width:650px;
+
+}
+
+.hero-greeting{
+
+    color:var(--clr-primary-light);
+
+    font-size:1.15rem;
+
+    font-weight:var(--fw-medium);
+
+    margin-bottom:1rem;
+
+    letter-spacing:1px;
+
+}
+
+.hero-name{
+
+    font-size:clamp(3.5rem,8vw,5.5rem);
+
+    line-height:1.05;
+
+    margin-bottom:.75rem;
+
+}
+
+.hero-role{
+
+    color:var(--clr-text);
+
+    font-size:1.7rem;
+
+    font-weight:var(--fw-medium);
+
+    margin-bottom:1.5rem;
+
+}
+
+.hero-description{
+
+    max-width:600px;
+
+    font-size:1.1rem;
+
+    margin-bottom:2.5rem;
+
+}
+
+
+
+/*==================================================
+    HERO BUTTONS
+====================================================*/
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:1.25rem;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+/*==================================================
+    HERO IMAGE
+====================================================*/
+
+.hero-image{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.hero-image img{
+
+    width:380px;
+
+    aspect-ratio:1;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:6px solid var(--clr-primary);
+
+    background:var(--clr-surface);
+
+    padding:.5rem;
+
+    box-shadow:
+        0 0 0 12px rgba(46,125,50,.08),
+        0 20px 50px rgba(0,0,0,.45);
+
+}
+
+
+
+/*==================================================
+    HERO IMAGE ANIMATION
+====================================================*/
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+.hero-image img{
+
+    animation:float 5s ease-in-out infinite;
+
+}
+
+
+
+/*==================================================
+    HERO TEXT ANIMATION
+====================================================*/
+
+.hero-content>*{
+
+    animation:slideUp .8s ease both;
+
+}
+
+.hero-content>*:nth-child(1){
+
+    animation-delay:.10s;
+
+}
+
+.hero-content>*:nth-child(2){
+
+    animation-delay:.20s;
+
+}
+
+.hero-content>*:nth-child(3){
+
+    animation-delay:.30s;
+
+}
+
+.hero-content>*:nth-child(4){
+
+    animation-delay:.40s;
+
+}
+
+.hero-content>*:nth-child(5){
+
+    animation-delay:.50s;
+
+}
+
+
+
+@keyframes slideUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+/*==================================================
+    HERO BUTTON IMPROVEMENTS
+====================================================*/
+
+.hero .btn{
+
+    min-width:170px;
+
+}
+
+.hero .btn-primary{
+
+    box-shadow:0 10px 30px rgba(46,125,50,.20);
+
+}
+
+.hero .btn-primary:hover{
+
+    box-shadow:0 15px 35px rgba(46,125,50,.35);
+
+}
+
+
+
+/*==================================================
+    END OF PART 1
+====================================================*/
+
+/*==================================================
+    KHYANRICK PORTFOLIO
+    HOME.CSS
+    Part 2 / 2
+====================================================*/
+
+
+/*==================================================
+    HERO BACKGROUND GLOW
+====================================================*/
+
+.hero{
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:50%;
+
+    right:8%;
+
+    width:520px;
+
+    height:520px;
+
+    border-radius:50%;
+
+    background:radial-gradient(
+        circle,
+        rgba(46,125,50,.18) 0%,
+        rgba(46,125,50,.08) 35%,
+        transparent 72%
+    );
+
+    transform:translateY(-50%);
+
+    pointer-events:none;
+
+    z-index:-1;
+
+}
+
+
+/*==================================================
+    FEATURED SKILLS
+====================================================*/
+
+.featured-skills{
+
+    background:var(--clr-surface);
+
+    border-top:1px solid var(--clr-border);
+
+    border-bottom:1px solid var(--clr-border);
+
+}
+
+.featured-skills .skills-grid{
+
+    margin-top:3rem;
+
+}
+
+.skill-card{
+
+    padding:2rem;
+
+    text-align:left;
+
+}
+
+.skill-card h3{
+
+    color:var(--clr-primary-light);
+
+    margin-bottom:.85rem;
+
+}
+
+.skill-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+
+/*==================================================
+    FEATURED PROJECTS
+====================================================*/
+
+.featured-projects{
+
+    position:relative;
+
+}
+
+.featured-projects .project-preview-grid{
+
+    margin-top:3rem;
+
+}
+
+.project-preview-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    min-height:240px;
+
+    padding:2rem;
+
+}
+
+.project-preview-card h3{
+
+    color:var(--clr-primary-light);
+
+    margin-bottom:1rem;
+
+}
+
+.project-preview-card p{
+
+    flex:1;
+
+}
+
+.project-preview-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+
+/*==================================================
+    CARD ACCENT
+====================================================*/
+
+.skill-card,
+.project-preview-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.skill-card::before,
+.project-preview-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:4px;
+
+    height:100%;
+
+    background:var(--clr-primary);
+
+    transform:scaleY(0);
+
+    transform-origin:top;
+
+    transition:var(--transition-normal);
+
+}
+
+.skill-card:hover::before,
+.project-preview-card:hover::before{
+
+    transform:scaleY(1);
+
+}
+
+
+/*==================================================
+    HERO IMAGE HOVER
+====================================================*/
+
+.hero-image img{
+
+    transition:
+        transform .5s ease,
+        box-shadow .5s ease;
+
+}
+
+.hero-image img:hover{
+
+    transform:scale(1.03);
+
+    box-shadow:
+        0 0 0 14px rgba(46,125,50,.10),
+        0 25px 55px rgba(0,0,0,.50);
+
+}
+
+
+/*==================================================
+    SECTION SPACING
+====================================================*/
+
+.featured-skills,
+.featured-projects{
+
+    padding-top:6rem;
+
+    padding-bottom:6rem;
+
+}
+
+
+/*==================================================
+    HERO DESCRIPTION
+====================================================*/
+
+.hero-description{
+
+    line-height:1.9;
+
+}
+
+
+/*==================================================
+    SUBTLE SEPARATORS
+====================================================*/
+
+.featured-projects::before{
+
+    content:"";
+
+    display:block;
+
+    width:90px;
+
+    height:3px;
+
+    background:var(--clr-primary);
+
+    margin:0 auto 4rem;
+
+    border-radius:999px;
+
+}
+
+
+/*==================================================
+    END OF HOME.CSS
+====================================================*/

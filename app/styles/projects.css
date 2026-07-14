@@ -1,0 +1,231 @@
+/*==================================================
+    KHYANRICK PORTFOLIO
+    PROJECTS.CSS
+====================================================*/
+
+
+/*==================================================
+    PAGE HERO
+====================================================*/
+
+.projects-hero{
+
+    min-height:35vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+
+/*==================================================
+    PROJECTS GRID
+====================================================*/
+
+.projects-grid{
+
+    display:grid;
+
+    gap:3rem;
+
+}
+
+
+
+/*==================================================
+    PROJECT CARD
+====================================================*/
+
+.project-card{
+
+    display:grid;
+
+    grid-template-columns:360px 1fr;
+
+    overflow:hidden;
+
+    min-height:320px;
+
+}
+
+
+
+/*==================================================
+    PROJECT IMAGE
+====================================================*/
+
+.project-image{
+
+    height:100%;
+
+    overflow:hidden;
+
+    background:var(--clr-surface-light);
+
+}
+
+.project-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:0;
+
+    transition:transform .6s ease;
+
+}
+
+.project-card:hover .project-image img{
+
+    transform:scale(1.05);
+
+}
+
+
+
+/*==================================================
+    PROJECT CONTENT
+====================================================*/
+
+.project-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    padding:2rem;
+
+}
+
+.project-title{
+
+    color:var(--clr-primary-light);
+
+    margin-bottom:1rem;
+
+}
+
+.project-description{
+
+    line-height:1.8;
+
+    margin-bottom:1.5rem;
+
+}
+
+
+
+/*==================================================
+    PROJECT TAGS
+====================================================*/
+
+.project-tags{
+
+    margin-bottom:2rem;
+
+}
+
+
+
+/*==================================================
+    PROJECT LINKS
+====================================================*/
+
+.project-links{
+
+    margin-top:auto;
+
+}
+
+
+
+/*==================================================
+    ALTERNATING LAYOUT
+====================================================*/
+
+.project-card:nth-child(even){
+
+    grid-template-columns:1fr 360px;
+
+}
+
+.project-card:nth-child(even) .project-image{
+
+    order:2;
+
+}
+
+.project-card:nth-child(even) .project-content{
+
+    order:1;
+
+}
+
+
+
+/*==================================================
+    CARD ACCENT
+====================================================*/
+
+.project-card{
+
+    position:relative;
+
+}
+
+.project-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:5px;
+
+    height:100%;
+
+    background:var(--clr-primary);
+
+    transform:scaleY(0);
+
+    transform-origin:top;
+
+    transition:var(--transition-normal);
+
+}
+
+.project-card:hover::before{
+
+    transform:scaleY(1);
+
+}
+
+
+
+/*==================================================
+    PAGE ANIMATION
+====================================================*/
+
+.projects-section{
+
+    animation:fadeUp .8s ease;
+
+}
+
+
+
+/*==================================================
+    END OF PROJECTS.CSS
+====================================================*/
