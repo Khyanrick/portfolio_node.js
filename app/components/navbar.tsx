@@ -1,0 +1,68 @@
+"use client";
+
+import Link from "next/link";
+import { useState } from "react";
+
+export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  return (
+    <header className="header">
+      <nav className="navbar">
+        {/* Logo */}
+        <div className="logo">
+          <Link href="/" onClick={() => setMenuOpen(false)}>
+            Khyanrick
+          </Link>
+        </div>
+
+        {/* Navigation Links */}
+        <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
+          <li>
+            <Link href="/" onClick={() => setMenuOpen(false)}>
+              Home
+            </Link>
+          </li>
+
+          <li>
+            <Link href="/about" onClick={() => setMenuOpen(false)}>
+              About
+            </Link>
+          </li>
+
+          <li>
+            <Link href="/projects" onClick={() => setMenuOpen(false)}>
+              Projects
+            </Link>
+          </li>
+
+          <li>
+            <Link href="/contact" onClick={() => setMenuOpen(false)}>
+              Contact
+            </Link>
+          </li>
+        </ul>
+
+        {/* Navigation Actions */}
+        <div className="nav-actions">
+          {/* Theme Toggle */}
+          <button
+            className="theme-toggle"
+            aria-label="Toggle Theme"
+          >
+            🌙
+          </button>
+
+          {/* Mobile Menu Toggle */}
+          <button
+            className="menu-toggle"
+            aria-label="Toggle Navigation Menu"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            {menuOpen ? "✕" : "☰"}
+          </button>
+        </div>
+      </nav>
+    </header>
+  );
+}

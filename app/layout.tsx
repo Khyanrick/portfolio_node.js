@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
+import Navbar from "./components/navbar";
+
+
 
 import "./globals.css";
 import "./styles/base.css";
@@ -11,20 +14,7 @@ import "./styles/contact.css";
 import "./styles/responsive.css";
 
 
-<ul className="nav-links">
-  <li>
-    <Link href="/">Home</Link>
-  </li>
-  <li>
-    <Link href="/about">About</Link>
-  </li>
-  <li>
-    <Link href="/projects">Projects</Link>
-  </li>
-  <li>
-    <Link href="/contact">Contact</Link>
-  </li>
-</ul>
+<Navbar />
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
