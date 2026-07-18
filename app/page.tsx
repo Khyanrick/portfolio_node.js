@@ -1,10 +1,10 @@
 import Link from "next/link";
-
-
+import FAQ from "./components/FAQ";
 
 export default function Home() {
   return (
     <>
+
       {/* ================= HERO SECTION ================= */}
 
       <section className="hero">
@@ -114,6 +114,7 @@ export default function Home() {
           </article>
         </div>
       </section>
+      <FAQ />
     </>
   );
 }

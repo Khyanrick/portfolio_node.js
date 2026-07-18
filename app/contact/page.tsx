@@ -1,4 +1,78 @@
+"use client";
+
+import { useState } from "react";
+
 export default function Contact() {
+  const [formData, setFormData] = useState({
+  name: "",
+  email: "",
+  subject: "",
+  message: "",
+});
+
+const [errors, setErrors] = useState({
+  name: "",
+  email: "",
+  message: "",
+});
+
+const [success, setSuccess] = useState("");
+
+  const handleChange = (
+  e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+) => {
+  setFormData({
+    ...formData,
+    [e.target.name]: e.target.value,
+  });
+};
+
+const handleSubmit = (e: React.FormEvent) => {
+  e.preventDefault();
+
+  const newErrors = {
+    name: "",
+    email: "",
+    message: "",
+  };
+
+  let valid = true;
+
+  if (!formData.name.trim()) {
+    newErrors.name = "Name is required.";
+    valid = false;
+  }
+
+  if (!formData.email.trim()) {
+    newErrors.email = "Email is required.";
+    valid = false;
+  } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+    newErrors.email = "Please enter a valid email.";
+    valid = false;
+  }
+
+  if (!formData.message.trim()) {
+    newErrors.message = "Message is required.";
+    valid = false;
+  }
+
+  setErrors(newErrors);
+
+  if (!valid) {
+    setSuccess("");
+    return;
+  }
+
+  setSuccess("✅ Message validated successfully!");
+
+  setFormData({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+};
+
   return (
     <>
       {/* ================= CONTACT HERO ================= */}
@@ -66,58 +140,79 @@ export default function Contact() {
         <div className="contact-form-container">
           <h2>Send a Message</h2>
 
-          <form className="contact-form">
-            <div className="form-group">
-              <label htmlFor="name">Name</label>
+          <form className="contact-form" onSubmit={handleSubmit}>
+  <div className="form-group">
+    <label htmlFor="name">Name</label>
 
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Your Name"
-                required
-              />
-            </div>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      placeholder="Your Name"
+      value={formData.name}
+      onChange={handleChange}
+    />
 
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
+    {errors.name && (
+      <p className="error-text">{errors.name}</p>
+    )}
+  </div>
 
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Your Email"
-                required
-              />
-            </div>
+  <div className="form-group">
+    <label htmlFor="email">Email</label>
 
-            <div className="form-group">
-              <label htmlFor="subject">Subject</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      placeholder="Your Email"
+      value={formData.email}
+      onChange={handleChange}
+    />
 
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                placeholder="Subject"
-              />
-            </div>
+    {errors.email && (
+      <p className="error-text">{errors.email}</p>
+    )}
+  </div>
 
-            <div className="form-group">
-              <label htmlFor="message">Message</label>
+  <div className="form-group">
+    <label htmlFor="subject">Subject</label>
 
-              <textarea
-                id="message"
-                name="message"
-                rows={6}
-                placeholder="Write your message here..."
-                required
-              ></textarea>
-            </div>
+    <input
+      type="text"
+      id="subject"
+      name="subject"
+      placeholder="Subject"
+      value={formData.subject}
+      onChange={handleChange}
+    />
+  </div>
 
-            <button type="submit" className="btn btn-primary">
-              Send Message
-            </button>
-          </form>
+  <div className="form-group">
+    <label htmlFor="message">Message</label>
+
+    <textarea
+      id="message"
+      name="message"
+      rows={6}
+      placeholder="Write your message here..."
+      value={formData.message}
+      onChange={handleChange}
+    />
+
+    {errors.message && (
+      <p className="error-text">{errors.message}</p>
+    )}
+  </div>
+
+  {success && (
+    <p className="success-text">{success}</p>
+  )}
+
+  <button type="submit" className="btn btn-primary">
+    Send Message
+  </button>
+</form>
         </div>
       </section>
     </>

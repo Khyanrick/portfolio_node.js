@@ -60,31 +60,22 @@ textarea{
 ====================================================*/
 
 :root{
+    /* ---------- LIGHT THEME ---------- */
 
-    /* ========= COLORS ========= */
-
-    --clr-background:#0D1117;
-
-    --clr-surface:#161B22;
-
-    --clr-surface-light:#1F2933;
+    --clr-background:#F8FAFC;
+    --clr-surface:#FFFFFF;
+    --clr-surface-light:#F1F5F9;
 
     --clr-primary:#2E7D32;
-
     --clr-primary-hover:#3FA34D;
-
     --clr-primary-light:#4CAF50;
 
-    --clr-text:#F5F5F5;
+    --clr-text:#1F2937;
+    --clr-text-muted:#4B5563;
 
-    --clr-text-muted:#A8B3BE;
-
-    --clr-border:#30363D;
-
+    --clr-border:#D1D5DB;
     --clr-danger:#D32F2F;
-
-    --clr-shadow:rgba(0,0,0,.35);
-
+    --clr-shadow:rgba(0,0,0,.15);
 
 
     /* ========= TYPOGRAPHY ========= */
@@ -152,6 +143,27 @@ textarea{
     --transition-normal:.35s ease;
 
 }
+
+/* ---------- DARK THEME ---------- */
+
+html.dark{
+
+    --clr-background:#0D1117;
+    --clr-surface:#161B22;
+    --clr-surface-light:#1F2933;
+
+    --clr-primary:#2E7D32;
+    --clr-primary-hover:#3FA34D;
+    --clr-primary-light:#4CAF50;
+
+    --clr-text:#F5F5F5;
+    --clr-text-muted:#A8B3BE;
+
+    --clr-border:#30363D;
+    --clr-danger:#D32F2F;
+    --clr-shadow:rgba(0,0,0,.35);
+}
+
 
 
 
@@ -369,24 +381,20 @@ hr{
 ====================================================*/
 
 
-/*==================================================
-    HEADER
-====================================================*/
-
 .header{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 
-    position:sticky;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
 
-    top:0;
+    background: color-mix(in srgb, var(--clr-surface) 88%, transparent);
 
-    z-index:1000;
+    border-bottom: 1px solid var(--clr-border);
 
-    backdrop-filter:blur(12px);
-
-    background:rgba(13,17,23,.90);
-
-    border-bottom:1px solid var(--clr-border);
-
+    transition: background var(--transition-normal),
+                border-color var(--transition-normal);
 }
 
 
@@ -1360,6 +1368,53 @@ textarea,
 
     }
 
+}
+/*==================================================
+    FAQ SECTION
+==================================================*/
+
+.faq-section{
+    padding:var(--space-xxl) 8%;
+}
+
+.faq-container{
+    max-width:800px;
+    margin:2rem auto 0;
+}
+
+.faq-item{
+    background:var(--clr-surface);
+    border:1px solid var(--clr-border);
+    border-radius:var(--radius-md);
+    margin-bottom:1rem;
+    overflow:hidden;
+    transition:var(--transition-normal);
+}
+
+.faq-item:hover{
+    border-color:var(--clr-primary);
+}
+
+.faq-question{
+    width:100%;
+    padding:1.2rem 1.5rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:none;
+    color:var(--clr-text);
+    font-size:1rem;
+    font-weight:var(--fw-semibold);
+    cursor:pointer;
+}
+
+.faq-answer{
+    padding:0 1.5rem 1.5rem;
+}
+
+.faq-answer p{
+    color:var(--clr-text-muted);
+    line-height:1.7;
 }
 
 
